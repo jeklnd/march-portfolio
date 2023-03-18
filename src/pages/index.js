@@ -83,10 +83,12 @@ export default function Home() {
               elevation={0}
             >
               <Typography variant="h4">
-                Hello, I&apos;m Jesse, a software engineer with a passion for the front-end.
+                Hello, I&apos;m Jesse, a software engineer with a passion for
+                the front-end.
               </Typography>
               <Typography variant="h6">
-                I enjoy developing beautiful websites and apps with a modern stack.
+                I enjoy developing beautiful websites and apps with a modern
+                stack.
               </Typography>
               <Typography>Contact Me</Typography>
             </Card>
@@ -137,7 +139,10 @@ export default function Home() {
                 initial={{ y: "2rem", opacity: 0 }}
                 whileInView={{ y: 0, opacity: 1 }}
                 viewport={{ once: true }}
-                transition={{ delay: 1.5, ease: "easeIn" }}
+                transition={{
+                  delay: project.id === 0 ? 1.5 : 0,
+                  ease: "easeIn",
+                }}
               >
                 <Card
                   elevation={0}
@@ -160,12 +165,12 @@ export default function Home() {
                         justifyContent: "center",
                         display: "flex",
                         height: "28rem",
-                        padding: "0 1rem 1rem 1rem"
+                        padding: "0 1rem 1rem 1rem",
                       }}
                     >
                       <Box
                         sx={{
-                        //   padding: ["1rem", "2rem"],
+                          //   padding: ["1rem", "2rem"],
                           position: "relative",
                           width: "100%",
                         }}
