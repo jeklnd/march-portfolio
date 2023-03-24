@@ -15,12 +15,20 @@ import headshot from "public/headshot.jpg";
 import dictionary from "public/assets/dictionary/iphone-12-pro-max--silver.svg";
 import connectFour from "public/assets/connect-four/connect-four-macbook-air.svg";
 import spaceTourism from "public/assets/space-tourism/space-tourism-surface-studio.svg";
+import audiophile from "public/assets/audiophile/audiophile.webp";
 
 import { motion } from "framer-motion";
 
 export default function Home() {
   const data = [
-    { id: 0, title: "Audiophile", type: "E-commerce site" },
+    {
+      id: 0,
+      title: "Audiophile",
+      type: "E-commerce site",
+      image: audiophile,
+      bgColor: "#d87d4a",
+      liveDemo: "https://audiophile-a1gf8tq92-jeklnd.vercel.app/",
+    },
     {
       id: 1,
       title: "Dictionary",
@@ -165,7 +173,7 @@ export default function Home() {
                         justifyContent: "center",
                         display: "flex",
                         height: "28rem",
-                        padding: "0 1rem 1rem 1rem",
+                        padding: project.image === audiophile ? "0" : "0 1rem 1rem 1rem",
                       }}
                     >
                       <Box
