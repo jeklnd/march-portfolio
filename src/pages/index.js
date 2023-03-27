@@ -27,7 +27,7 @@ export default function Home() {
       type: "E-commerce site",
       image: audiophile,
       bgColor: "#d87d4a",
-      liveDemo: "https://audiophile-a1gf8tq92-jeklnd.vercel.app/",
+      liveDemo: "https://audiophile-pearl.vercel.app/",
     },
     {
       id: 1,
@@ -173,12 +173,14 @@ export default function Home() {
                         justifyContent: "center",
                         display: "flex",
                         height: "28rem",
-                        padding: project.image === audiophile ? "0" : "0 1rem 1rem 1rem",
+                        padding:
+                          project.image === audiophile
+                            ? "0"
+                            : "0 1rem 1rem 1rem",
                       }}
                     >
                       <Box
                         sx={{
-                          //   padding: ["1rem", "2rem"],
                           position: "relative",
                           width: "100%",
                         }}
