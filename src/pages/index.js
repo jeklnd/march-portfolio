@@ -24,7 +24,7 @@ export default function Home() {
     {
       id: 0,
       title: "Audiophile",
-      type: "E-commerce site",
+      type: "Full-stack e-commerce site",
       image: audiophile,
       bgColor: "#d87d4a",
       liveDemo: "https://audiophile-pearl.vercel.app/",
