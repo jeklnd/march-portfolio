@@ -39,7 +39,7 @@ export default function Navbar({ logo }) {
             sx={{
               display: "flex",
               justifyContent: "space-between",
-              padding: "2rem",
+              padding: ["1rem", "1.5rem", "2rem"]
             }}
           >
             <Box
