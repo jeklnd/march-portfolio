@@ -9,6 +9,8 @@ import {
   CardActions,
   CardActionArea,
   Box,
+  IconButton,
+  Button,
 } from "@mui/material";
 import Image from "next/image";
 import headshot from "public/headshot.jpg";
@@ -16,7 +18,7 @@ import dictionary from "public/assets/dictionary/iphone-12-pro-max--silver.svg";
 import connectFour from "public/assets/connect-four/connect-four-macbook-air.svg";
 import spaceTourism from "public/assets/space-tourism/space-tourism-surface-studio.svg";
 import audiophile from "public/assets/audiophile/audiophile.webp";
-
+import GitHubIcon from "@mui/icons-material/GitHub";
 import { motion } from "framer-motion";
 
 export default function Home() {
@@ -28,6 +30,7 @@ export default function Home() {
       image: audiophile,
       bgColor: "#d87d4a",
       liveDemo: "https://audiophile-pearl.vercel.app/",
+      githubRepo: "https://github.com/jeklnd/audiophile",
     },
     {
       id: 1,
@@ -36,14 +39,16 @@ export default function Home() {
       image: dictionary,
       bgColor: "#bf7cf2",
       liveDemo: "https://dictionary-jdk.netlify.app/",
+      githubRepo: "https://github.com/jeklnd/dictionary-app",
     },
     {
       id: 2,
       title: "Space Tourism",
       type: "4-page static website",
       image: spaceTourism,
-      bgColor: "#d87d4a",
+      bgColor: "#070d19",
       liveDemo: "https://space-tourism-jeklnd.netlify.app",
+      githubRepo: "https://github.com/jeklnd/space-tourism",
     },
     {
       id: 3,
@@ -52,6 +57,7 @@ export default function Home() {
       image: connectFour,
       bgColor: "#ffce67",
       liveDemo: "https://connect-four-game.herokuapp.com/",
+      githubRepo: "https://github.com/jeklnd/connect-four-game",
     },
   ];
   return (
@@ -174,8 +180,54 @@ export default function Home() {
                   sx={{
                     borderRadius: "16px",
                     backgroundColor: `${project.bgColor}60`,
+                    display: "flex",
+                    flexDirection: "column",
+                    position: "relative",
                   }}
                 >
+                  <Button
+                    sx={{
+                      color: "#fff",
+                      position: "absolute",
+                      right: 0,
+                      margin: "0.25rem -0.5rem 0 0",
+                      zIndex: 102,
+                      "&:hover": {
+                        "& + a > div": { backgroundColor: "#000000" },
+                      },
+                    }}
+                    href={project.githubRepo}
+                    rel="noopener noreferrer"
+                    target="_blank"
+                  >
+                    <GitHubIcon variant="contained"></GitHubIcon>
+                  </Button>
+                  <a
+                    href={project.githubRepo}
+                    rel="noopener noreferrer"
+                    target="_blank"
+                    sx={{}}
+                  >
+                    <Box
+                      sx={{
+                        height: "8rem",
+                        width: "8rem",
+                        backgroundColor: "#fff",
+                        position: "absolute",
+                        right: 0,
+                        transform: "rotate(42.5deg) translate(-0.25rem, -6rem)",
+                        backgroundColor: "#00000090",
+                        color: "#ffffff90",
+                        "&:hover": {
+                          backgroundColor: "#000000",
+                          color: "#ffffff",
+                          cursor: "pointer",
+                        },
+                        zIndex: 101,
+                      }}
+                    ></Box>
+                  </a>
+
                   <CardActionArea
                     href={project.liveDemo}
                     target="_blank"
@@ -184,7 +236,10 @@ export default function Home() {
                     <CardHeader
                       title={project.title}
                       subheader={project.type}
-                    />
+                      sx={{
+                        "& .MuiCardHeader-avatar": { order: 2, margin: "0" },
+                      }}
+                    ></CardHeader>
                     <CardContent
                       sx={{
                         justifyContent: "center",
