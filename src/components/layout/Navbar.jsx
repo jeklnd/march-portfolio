@@ -10,12 +10,9 @@ import {
   Button,
 } from "@mui/material";
 import Link from "next/link";
-import Image from "next/image";
 import MenuIcon from "@mui/icons-material/Menu";
 import PictureAsPdfOutlinedIcon from "@mui/icons-material/PictureAsPdfOutlined";
 import { motion } from "framer-motion";
-import { theme } from "@/styles/theme";
-
 
 export default function Navbar({ logo }) {
   const links = ["home", "Projects", "Contact"];
@@ -39,7 +36,7 @@ export default function Navbar({ logo }) {
             sx={{
               display: "flex",
               justifyContent: "space-between",
-              padding: ["1rem", "1.5rem", "2rem"]
+              padding: ["1rem", "1.5rem", "2rem"],
             }}
           >
             <Box
