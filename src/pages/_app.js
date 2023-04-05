@@ -7,7 +7,7 @@ import { theme } from "@/styles/theme";
 export default function App({ Component, pageProps }) {
   const [isLoading, setisLoading] = useState(true);
   useEffect(() => {
-    setTimeout(() => setisLoading(false), 2500);
+    setTimeout(() => setisLoading(false), 1600);
   }, []);
 
   return (
