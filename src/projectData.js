@@ -10,7 +10,7 @@ export const data = [
   },
   {
     id: 1,
-    title: "Dictionary",
+    title: "DictionaryPlus",
     type: "Dynamic web app",
     image: "assets/dictionary/iphone-12-pro-max--silver.svg",
     bgColor: "#bf7cf2",
@@ -28,6 +28,7 @@ export const data = [
   },
   {
     id: 3,
+
     title: "Connect Four",
     type: "Web-based game",
     image: "assets/connect-four/connect-four-macbook-air.svg",
