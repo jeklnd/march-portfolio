@@ -1,28 +1,23 @@
 import { Box } from "@mui/material";
-import logo from "public/logo.svg";
-import Image from "next/image";
 import { motion, AnimatePresence } from "framer-motion";
 import { useState, useEffect } from "react";
 
-export default function LoadingScreen({ isLoading }) {
+export default function LoadingScreen() {
   const [isAnimating, setIsAnimating] = useState(true);
   useEffect(() => {
-    setTimeout(() => setIsAnimating(!isAnimating), 2000);
-  }, []);
+    setTimeout(() => setIsAnimating(!isAnimating), 1200);
+  }, [isAnimating]);
 
   const draw = {
     hidden: {
-      pathLength: 0,
       opacity: 0,
     },
     visible: (i) => {
-      const delay = i * 0.5;
+      const delay = i * 0.2;
       return {
-        pathLength: 1,
         opacity: 1,
         transition: {
-          pathLength: { delay, type: "spring", duration: 1.5, bounce: 0 },
-          opacity: { delay, duration: 0.5 },
+          opacity: { delay, duration: 0.4 },
         },
       };
     },
@@ -67,8 +62,8 @@ export default function LoadingScreen({ isLoading }) {
   -317 -318 -318 0 653 0 652 -180 0 -180 0 0 -1170z"
                   variants={draw}
                   custom={2}
-                  exit={{ scale: 0 }}
-                  transition={{ scale: { duration: 0.5 } }}
+                  exit={{ scale: 0, rotate: 360, translateX: -16 }}
+                  transition={{ scale: { duration: 0.3 } }}
                 />
               )}
             </AnimatePresence>
@@ -79,8 +74,8 @@ export default function LoadingScreen({ isLoading }) {
   71 130 274 6 350 -46 29 -143 36 -199 16z"
                   variants={draw}
                   custom={3}
-                  exit={{ scale: 0 }}
-                  transition={{ scale: { duration: 0.5 } }}
+                  exit={{ scale: 0, rotate: 360 }}
+                  transition={{ scale: { duration: 0.3 } }}
                 />
               )}
             </AnimatePresence>
@@ -94,8 +89,8 @@ export default function LoadingScreen({ isLoading }) {
   218 446 463 18 86 19 147 19 960 l0 867 -445 0 -445 0 0 -160z"
                   variants={draw}
                   custom={1}
-                  exit={{ scale: 0 }}
-                  transition={{ scale: { duration: 0.5 } }}
+                  exit={{ scale: 0, rotate: 360 }}
+                  transition={{ scale: { duration: 0.3 } }}
                 />
               )}
             </AnimatePresence>
