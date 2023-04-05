@@ -2,20 +2,27 @@ import {
   AppBar,
   Container,
   Toolbar,
-  Link as MuiLink,
   List,
+  Link as MuiLink,
   IconButton,
   Box,
   Typography,
   Button,
 } from "@mui/material";
-import Link from "next/link";
 import MenuIcon from "@mui/icons-material/Menu";
 import PictureAsPdfOutlinedIcon from "@mui/icons-material/PictureAsPdfOutlined";
 import { motion } from "framer-motion";
 
 export default function Navbar({ logo }) {
   const links = ["home", "Projects", "Contact"];
+  const variants = {
+    hidden: { opacity: 0, y: -8 },
+    visible: (index) => ({
+      opacity: 1,
+      y: 0,
+      transition: { delay: 0.5 + index * 0.1 },
+    }),
+  };
 
   return (
     <>
@@ -26,10 +33,6 @@ export default function Navbar({ logo }) {
           color: "#000",
         }}
         elevation={0}
-        component={motion.header}
-        initial={{ y: "-1rem", opacity: 0 }}
-        whileInView={{ y: 0, opacity: 1 }}
-        viewport={{ once: true }}
       >
         <Container>
           <Toolbar
@@ -56,9 +59,7 @@ export default function Navbar({ logo }) {
               </IconButton>
             </Box>
             <MuiLink
-              component={Link}
               href="/"
-              underline="none"
               sx={{
                 color: "#182639",
                 "&:hover": { color: "#000" },
@@ -66,28 +67,49 @@ export default function Navbar({ logo }) {
                 display: "flex",
                 justifyContent: "center",
                 alignItems: "center",
+                textDecoration: "none",
               }}
             >
-              <Typography variant="h4">Jesse Krensel</Typography>
+              <Typography
+                variant="h4"
+                component={motion.h4}
+                initial={{ opacity: 0, x: -32 }}
+                animate={{ opacity: 1, x: 0 }}
+                transform={{ duration: 0.1 }}
+              >
+                Jesse Krensel
+              </Typography>
             </MuiLink>
 
             <Box sx={{ display: "flex", gap: "1rem" }}>
               <List sx={{ display: ["none", "none", "inline"] }}>
                 {links.map((link, index) => (
-                  <MuiLink
-                    component={Link}
+                  <Box
                     key={index}
-                    href={link !== "home" ? `#${link}` : "/"}
-                    sx={{
-                      color: "#182639",
-                      padding: "0px 2rem",
-                      "&:hover": { color: "#000" },
-                      textTransform: "capitalize",
-                    }}
-                    underline="none"
+                    sx={{ display: "inline-block" }}
+                    component={motion.div}
+                    initial="hidden"
+                    animate="visible"
+                    variants={variants}
+                    custom={index}
                   >
-                    {link}
-                  </MuiLink>
+                    <MuiLink
+                      href={link !== "home" ? `#${link}` : "/"}
+                      sx={{
+                        color: "#182639",
+                        padding: "0px 2rem",
+                        "&:hover": { color: "#000" },
+                        textTransform: "capitalize",
+                        listStyle: "none",
+                        textDecoration: "none",
+                        margin: 0,
+                        position: "relative",
+                        display: "inline",
+                      }}
+                    >
+                      {link}
+                    </MuiLink>
+                  </Box>
                 ))}
               </List>
               <Button
@@ -107,6 +129,10 @@ export default function Navbar({ logo }) {
                 href="/assets/Placeholder-PDF.pdf"
                 target="_blank"
                 rel="noopener noreferrer"
+                component={motion.a}
+                initial={{ y: -24, opacity: 0 }}
+                animate={{ y: 0, opacity: 1 }}
+                transition={{ delay: 0.8 }}
               >
                 <Typography>Resume</Typography>
               </Button>
