@@ -13,7 +13,7 @@ import {
   Button,
 } from "@mui/material";
 import Image from "next/image";
-import headshot from "public/headshot.jpg";
+import headshot from "public/photo_headshot.png";
 import { motion } from "framer-motion";
 import ProjectCard from "@/components/ProjectCard";
 import { data } from "@/projectData";
@@ -46,13 +46,13 @@ export default function Home() {
       </Head>
 
       <Container sx={{ padding: ["0 2rem", "0 2.5rem"] }}>
-        <Box
+        {/* <Box
           sx={{
             backgroundColor: "#000",
             height: "40vh",
             width: "2rem",
           }}
-        ></Box>
+        ></Box> */}
         <Grid
           container
           rowGap={[2, 2]}
@@ -67,10 +67,10 @@ export default function Home() {
               padding: ["0 0.25rem", "0 0.375rem", "0 0.5rem"],
             }}
             component={motion.div}
-            initial={{ opacity: 0 }}
-            whileInView={{ opacity: 1 }}
+            initial={{ x: -16, opacity: 0 }}
+            whileInView={{ x: 0, opacity: 1 }}
             viewport={{ once: true }}
-            transition={{ delay: 0.5, ease: "easeIn" }}
+            transition={{ delay: 0.8 }}
           >
             <Card
               sx={{
@@ -81,8 +81,7 @@ export default function Home() {
               elevation={0}
             >
               <Typography variant="h4">
-                Hello, I&apos;m Jesse, a software engineer with a passion for
-                the front-end.
+                I build for the web using a modern tech stack.
               </Typography>
               <Typography variant="h6">
                 My goal is to work at a company where I can deliver business
@@ -100,10 +99,10 @@ export default function Home() {
               padding: ["0 0.25rem", "0 0.375rem", "0 0.5rem"],
             }}
             component={motion.div}
-            initial={{ x: "2rem", opacity: 0 }}
+            initial={{ x: "1rem", opacity: 0 }}
             whileInView={{ x: 0, opacity: 1 }}
             viewport={{ once: true }}
-            transition={{ delay: 1, ease: "linear" }}
+            transition={{ delay: 0.8 }}
           >
             <Box
               sx={{
@@ -136,7 +135,7 @@ export default function Home() {
             initial={{ y: "1rem", opacity: 0 }}
             whileInView={{ y: 0, opacity: 1 }}
             viewport={{ once: true }}
-            transition={{ ease: "easeIn" }}
+            transition={{ delay: 1, ease: "easeIn" }}
           >
             <Card elevation={0} sx={{ borderRadius: "16px" }}>
               <CardActionArea>
@@ -148,10 +147,20 @@ export default function Home() {
             </Card>
           </Grid>
         </Grid>
+        <Typography
+          variant="body1"
+          sx={{ textAlign: "center", padding: "2rem" }}
+        >
+          Designed and developed with ❤️ by Jesse Krensel ©{" "}
+          {(function () {
+            const date = new Date();
+            return date.getFullYear();
+          })()}
+        </Typography>
       </Container>
-      <Box
+      {/* <Box
         sx={{ backgroundColor: "#000", height: "1rem", width: "1rem" }}
-      ></Box>
+      ></Box> */}
     </>
   );
 }
