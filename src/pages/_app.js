@@ -3,6 +3,7 @@ import { useState, useEffect } from "react";
 import LoadingScreen from "@/components/LoadingScreen";
 import { ThemeProvider, CssBaseline } from "@mui/material";
 import { theme } from "@/styles/theme";
+import "@/styles/global.css";
 
 export default function App({ Component, pageProps }) {
   const [isLoading, setisLoading] = useState(true);
