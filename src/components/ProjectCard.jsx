@@ -38,8 +38,9 @@ export default function ProjectCard({ project }) {
       whileInView={{ y: 0, opacity: 1 }}
       viewport={{ once: true }}
       transition={{
-        delay: 1,
+        delay: 0.1,
       }}
+      id={project.id === 0 && "Projects"}
     >
       <Card
         elevation={0}
@@ -131,7 +132,7 @@ export default function ProjectCard({ project }) {
               ></Image>
             </Box>
           </CardContent>
-          <CardContent
+          {/* <CardContent
             sx={{
               display: "flex",
               flexDirection: "row",
@@ -216,7 +217,7 @@ export default function ProjectCard({ project }) {
                 );
               }
             })(project)}
-          </CardContent>
+          </CardContent> */}
         </CardActionArea>
       </Card>
     </Grid>
