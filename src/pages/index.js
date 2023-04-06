@@ -161,30 +161,34 @@ export default function Home() {
                     gap: "1rem",
                   }}
                 >
-                  <Typography variant="h5" sx={{ fontWeight: "bold" }}>
-                    Hiring?
+                  <Typography variant="h5">
+                    Hiring? Send me a message on LinkedIn!
                   </Typography>
-                  <Link
+                  <Button
                     href="https://www.linkedin.com/in/jessekrensel/"
                     rel="noopener noreferrer"
                     target="_blank"
+                    sx={{
+                      backgroundColor: "#0a66c2",
+                      "&:hover": { backgroundColor: "#0a66c2" },
+                    }}
                   >
                     <LinkedInIcon
                       sx={{
                         display: "flex",
                         justifyContent: "center",
                         alignItems: "center",
-                        color: "#0a66c2",
+                        color: "#fff",
                       }}
                     />
-                  </Link>
-                  <Typography
+                  </Button>
+                  {/* <Typography
                   // href="mailto:jdkrensel@gmail.com"
                   // target="_blank"
                   // rel="noopener noreferrer"
                   >
                     jdkrensel@gmail.com
-                  </Typography>
+                  </Typography> */}
 
                   {/* <Box>
                     <EmailIcon
