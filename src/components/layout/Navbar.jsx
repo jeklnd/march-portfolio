@@ -14,7 +14,7 @@ import PictureAsPdfOutlinedIcon from "@mui/icons-material/PictureAsPdfOutlined";
 import { motion } from "framer-motion";
 
 export default function Navbar({ logo }) {
-  const links = ["home", "Projects", "Contact"];
+  const links = ["home", "Projects"];
   const variants = {
     hidden: { opacity: 0, y: -8 },
     visible: (index) => ({
@@ -33,6 +33,7 @@ export default function Navbar({ logo }) {
           color: "#000",
         }}
         elevation={0}
+        id="home"
       >
         <Container>
           <Toolbar
@@ -94,7 +95,7 @@ export default function Navbar({ logo }) {
                     custom={index}
                   >
                     <MuiLink
-                      href={link !== "home" ? `#${link}` : "/"}
+                      href={`#${link}`}
                       sx={{
                         color: "#182639",
                         padding: "0px 2rem",
