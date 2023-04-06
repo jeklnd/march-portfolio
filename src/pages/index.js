@@ -5,18 +5,29 @@ import {
   Container,
   Card,
   CardHeader,
-  CardContent,
-  CardActions,
   CardActionArea,
   Box,
-  IconButton,
+  Stack,
   Button,
 } from "@mui/material";
 import Image from "next/image";
 import headshot from "public/photo_headshot.png";
-import { motion } from "framer-motion";
+import { motion, useMotionValue, useTransform } from "framer-motion";
 import ProjectCard from "@/components/ProjectCard";
 import { data } from "@/projectData";
+import ReactIcon from "@/icons/ReactIcon";
+import NextjsIcon from "@/icons/NextjsIcon";
+import HtmlIcon from "@/icons/HtmlIcon";
+import CssIcon from "@/icons/CssIcon";
+import JavaScriptIcon from "@/icons/JavaScriptIcon";
+import MuiIcon from "@/icons/MuiIcon";
+import FigmaIcon from "@/icons/FigmaIcon";
+import HerokuIcon from "@/icons/HerokuIcon";
+import VercelIcon from "@/icons/VercelIcon";
+import NetlifyIcon from "@/icons/NetlifyIcon";
+import LinkedInIcon from "@mui/icons-material/LinkedIn";
+import EmailIcon from "@mui/icons-material/Email";
+import Link from "next/link";
 
 export default function Home() {
   return (
@@ -60,8 +71,8 @@ export default function Home() {
         >
           <Grid
             item
-            xs={6}
-            sm={6}
+            xs={12}
+            sm={12}
             md={8}
             sx={{
               padding: ["0 0.25rem", "0 0.375rem", "0 0.5rem"],
@@ -75,24 +86,123 @@ export default function Home() {
             <Card
               sx={{
                 height: "100%",
-                padding: "1rem",
+                padding: "2rem",
                 borderRadius: "16px",
+                backgroundImage: `radial-gradient(at 44% 0%, #E0F7FA 0px, transparent 50%),
+                radial-gradient(at 80% 0%, #E0FFFF 0px, transparent 50%),
+                radial-gradient(at 80% 50%, #B2DFDB 0px, transparent 50%),
+                radial-gradient(at 0% 100%, #B3E5FC 0px, transparent 50%),
+                radial-gradient(at 80% 100%, #CFD8DC 0px, transparent 50%),
+                radial-gradient(at 0% 0%, #CFD8DC 0px, transparent 50%)`,
+                color: "#21273a",
+                perspective: "2000",
               }}
               elevation={0}
             >
-              <Typography variant="h4">
-                I build for the web using a modern tech stack.
-              </Typography>
-              <Typography variant="h6">
-                My goal is to work at a company where I can deliver business
-                value while leveling up my skills as a developer.
-              </Typography>
-              <Typography>Reach out</Typography>
+              <Stack spacing={1}>
+                <Typography variant="subtitle1" sx={{ color: "#3f4864" }}>
+                  Hi, my name is
+                </Typography>
+                <Typography variant="h3" sx={{ fontWeight: "bold" }}>
+                  Jesse Krensel.
+                </Typography>
+                <Typography variant="h4" sx={{ color: "#3f4864" }}>
+                  I build for the web using a modern tech stack:
+                </Typography>
+                <Grid
+                  container
+                  sx={{
+                    display: "flex",
+                    gap: "1rem",
+                    justifyContent: "center",
+                    padding: "2rem",
+                  }}
+                >
+                  <Box sx={{ height: "2rem", width: "2rem" }}>
+                    <HtmlIcon />
+                  </Box>
+                  <Box sx={{ height: "2rem", width: "2rem" }}>
+                    <CssIcon />
+                  </Box>
+                  <Box sx={{ height: "2rem", width: "2rem" }}>
+                    <JavaScriptIcon />
+                  </Box>
+                  <Box sx={{ height: "2rem", width: "2rem" }}>
+                    <ReactIcon />
+                  </Box>
+                  <Box sx={{ height: "2rem", width: "2rem" }}>
+                    <MuiIcon />
+                  </Box>
+                  <Box sx={{ height: "2rem", width: "2rem" }}>
+                    <NextjsIcon />
+                  </Box>
+                  <Box sx={{ height: "2rem", width: "2rem" }}>
+                    <FigmaIcon />
+                  </Box>
+                  <Box sx={{ height: "2rem", width: "2rem" }}>
+                    <HerokuIcon />
+                  </Box>
+                  <Box sx={{ height: "2rem", width: "2rem" }}>
+                    <NetlifyIcon />
+                  </Box>
+                  <Box sx={{ height: "2rem", width: "2rem" }}>
+                    <VercelIcon />
+                  </Box>
+                </Grid>
+                <Typography variant="h6" sx={{ color: "#3f4864" }}>
+                  My stack and skills grow constantly and with each project
+                  requirement.
+                </Typography>
+                <Box
+                  sx={{
+                    display: "flex",
+                    alignItems: "center",
+                    paddingTop: "2rem",
+                    gap: "1rem",
+                  }}
+                >
+                  <Typography variant="h5" sx={{ fontWeight: "bold" }}>
+                    Hiring?
+                  </Typography>
+                  <Link
+                    href="https://www.linkedin.com/in/jessekrensel/"
+                    rel="noopener noreferrer"
+                    target="_blank"
+                  >
+                    <LinkedInIcon
+                      sx={{
+                        display: "flex",
+                        justifyContent: "center",
+                        alignItems: "center",
+                        color: "#0a66c2",
+                      }}
+                    />
+                  </Link>
+                  <Typography
+                  // href="mailto:jdkrensel@gmail.com"
+                  // target="_blank"
+                  // rel="noopener noreferrer"
+                  >
+                    jdkrensel@gmail.com
+                  </Typography>
+
+                  {/* <Box>
+                    <EmailIcon
+                      sx={{
+                        display: "flex",
+                        justifyContent: "center",
+                        alignItems: "center",
+                        color: "#0a66c2",
+                      }}
+                    />
+                  </Box> */}
+                </Box>
+              </Stack>
             </Card>
           </Grid>
           <Grid
             item
-            xs={6}
+            xs={12}
             sm={6}
             md={4}
             sx={{
@@ -107,7 +217,8 @@ export default function Home() {
             <Box
               sx={{
                 position: "relative",
-                minHeight: ["300px", "400px"],
+                height: ["448px", "100%"],
+                width: "100%",
               }}
             >
               <Image
@@ -117,7 +228,7 @@ export default function Home() {
                   objectFit: "cover",
                   borderRadius: "16px",
                 }}
-                alt={"ai generated image of Jesse Krensel"}
+                alt={"image of Jesse Krensel"}
               ></Image>
               <Box sx={{ position: "relative" }}></Box>
             </Box>
@@ -135,21 +246,21 @@ export default function Home() {
             initial={{ y: "1rem", opacity: 0 }}
             whileInView={{ y: 0, opacity: 1 }}
             viewport={{ once: true }}
-            transition={{ delay: 1, ease: "easeIn" }}
+            transition={{ delay: 0.1 }}
           >
-            <Card elevation={0} sx={{ borderRadius: "16px" }}>
+            {/* <Card elevation={0} sx={{ borderRadius: "16px" }}>
               <CardActionArea>
                 <CardHeader
                   title="Have a project idea?"
                   subheader="Feel free to reach out to for collaborations or to just to say hi"
                 />
               </CardActionArea>
-            </Card>
+            </Card> */}
           </Grid>
         </Grid>
         <Typography
           variant="body1"
-          sx={{ textAlign: "center", padding: "2rem" }}
+          sx={{ textAlign: "center", padding: "0 0 2rem" }}
         >
           Designed and developed with ❤️ by Jesse Krensel ©{" "}
           {(function () {
