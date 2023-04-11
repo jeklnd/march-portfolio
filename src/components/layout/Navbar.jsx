@@ -43,7 +43,7 @@ export default function Navbar({ logo }) {
               padding: ["1rem", "1.5rem", "2rem"],
             }}
           >
-            <Box
+            {/* <Box
               sx={{
                 paddingRight: ["0", "2rem", "0"],
                 display: { md: "none" },
@@ -58,7 +58,7 @@ export default function Navbar({ logo }) {
               >
                 <MenuIcon fontSize="inherit" />
               </IconButton>
-            </Box>
+            </Box> */}
             <MuiLink
               href="/"
               sx={{
