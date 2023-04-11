@@ -15,19 +15,11 @@ import headshot from "public/photo_headshot.png";
 import { motion, useMotionValue, useTransform } from "framer-motion";
 import ProjectCard from "@/components/ProjectCard";
 import { data } from "@/projectData";
-import ReactIcon from "@/icons/ReactIcon";
-import NextjsIcon from "@/icons/NextjsIcon";
-import HtmlIcon from "@/icons/HtmlIcon";
-import CssIcon from "@/icons/CssIcon";
-import JavaScriptIcon from "@/icons/JavaScriptIcon";
-import MuiIcon from "@/icons/MuiIcon";
-import FigmaIcon from "@/icons/FigmaIcon";
-import HerokuIcon from "@/icons/HerokuIcon";
-import VercelIcon from "@/icons/VercelIcon";
-import NetlifyIcon from "@/icons/NetlifyIcon";
-import LinkedInIcon from "@mui/icons-material/LinkedIn";
 import EmailIcon from "@mui/icons-material/Email";
 import Link from "next/link";
+import IconList from "@/icons/IconList";
+import LinkedInIcon from "@mui/icons-material/LinkedIn";
+
 
 export default function Home() {
   return (
@@ -107,7 +99,7 @@ export default function Home() {
                   Jesse Krensel.
                 </Typography>
                 <Typography variant="h4" sx={{ color: "#3f4864" }}>
-                  I build for the web using a modern tech stack:
+                  I build for the web using a modern stack.
                 </Typography>
                 <Grid
                   container
@@ -115,43 +107,13 @@ export default function Home() {
                     display: "flex",
                     gap: "1rem",
                     justifyContent: "center",
-                    padding: "2rem",
+                    padding: "2rem 0rem",
                   }}
                 >
-                  <Box sx={{ height: "2rem", width: "2rem" }}>
-                    <HtmlIcon />
-                  </Box>
-                  <Box sx={{ height: "2rem", width: "2rem" }}>
-                    <CssIcon />
-                  </Box>
-                  <Box sx={{ height: "2rem", width: "2rem" }}>
-                    <JavaScriptIcon />
-                  </Box>
-                  <Box sx={{ height: "2rem", width: "2rem" }}>
-                    <ReactIcon />
-                  </Box>
-                  <Box sx={{ height: "2rem", width: "2rem" }}>
-                    <MuiIcon />
-                  </Box>
-                  <Box sx={{ height: "2rem", width: "2rem" }}>
-                    <NextjsIcon />
-                  </Box>
-                  <Box sx={{ height: "2rem", width: "2rem" }}>
-                    <FigmaIcon />
-                  </Box>
-                  <Box sx={{ height: "2rem", width: "2rem" }}>
-                    <HerokuIcon />
-                  </Box>
-                  <Box sx={{ height: "2rem", width: "2rem" }}>
-                    <NetlifyIcon />
-                  </Box>
-                  <Box sx={{ height: "2rem", width: "2rem" }}>
-                    <VercelIcon />
-                  </Box>
+                  <IconList />
                 </Grid>
                 <Typography variant="h6" sx={{ color: "#3f4864" }}>
-                  My stack and skills grow constantly and with each project
-                  requirement.
+                  My stack and skills grow constantly and as each project requires.
                 </Typography>
                 <Box
                   sx={{
@@ -162,7 +124,7 @@ export default function Home() {
                   }}
                 >
                   <Typography variant="h5">
-                    Hiring? Send me a message on LinkedIn!
+                    Hiring? Let&apos;s connect on LinkedIn!
                   </Typography>
                   <Button
                     href="https://www.linkedin.com/in/jessekrensel/"
