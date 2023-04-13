@@ -127,7 +127,7 @@ export default function Navbar({ logo }) {
                   },
                 }}
                 elevation={0}
-                href="/assets/Placeholder-PDF.pdf"
+                href="/assets/JesseKrensel_Resume.pdf"
                 target="_blank"
                 rel="noopener noreferrer"
                 component={motion.a}
