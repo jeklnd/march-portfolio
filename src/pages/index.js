@@ -11,7 +11,7 @@ import {
   Button,
 } from "@mui/material";
 import Image from "next/image";
-import headshot from "public/photo_headshot.png";
+import headshot from "/public/photo_headshot.png";
 import { motion, useMotionValue, useTransform } from "framer-motion";
 import ProjectCard from "@/components/ProjectCard";
 import { data } from "@/projectData";
