@@ -11,17 +11,18 @@ export default function App({ Component, pageProps }) {
     setTimeout(() => setisLoading(false), 1600);
   }, []);
 
-  return (
-    <ThemeProvider theme={theme}>
-      <CssBaseline>
-        {!isLoading ? (
-          <Layout>
-            <Component {...pageProps} />
-          </Layout>
-        ) : (
-          <LoadingScreen isLoading={isLoading} />
-        )}
-      </CssBaseline>
-    </ThemeProvider>
-  );
+  return <div>Update in progress👷</div> 
+  // (
+  //   <ThemeProvider theme={theme}>
+  //     <CssBaseline>
+  //       {!isLoading ? (
+  //         <Layout>
+  //           <Component {...pageProps} />
+  //         </Layout>
+  //       ) : (
+  //         <LoadingScreen isLoading={isLoading} />
+  //       )}
+  //     </CssBaseline>
+  //   </ThemeProvider>
+  // );
 }
